@@ -155,6 +155,7 @@
     <li><strong>Identyfikator anonimowy</strong> — aplikacja tworzy anonimowy identyfikator użytkownika za pomocą Firebase Authentication. Nie jest powiązany z żadnymi danymi osobowymi.</li>
     <li><strong>Dane ogłoszeń</strong> — przy publikowaniu ogłoszenia aktywności zbierane są: znak wywoławczy lub nick, częstotliwość, lokalizacja oraz godziny aktywności. Dane te są przechowywane w Firebase Firestore i widoczne publicznie dla innych użytkowników aplikacji.</li>
     <li><strong>Dane analityczne</strong> — aplikacja korzysta z Firebase Analytics do zbierania anonimowych danych o użytkowaniu (np. liczba sesji, używane ekrany). Dane te nie identyfikują użytkownika.</li>
+    <li><strong>Dane z rejestrów publicznych</strong> — aplikacja wyświetla dane z publicznego rejestru UKE (znaki wywoławcze klubów i operatorów, miejscowości, kategorie licencji). Dane te są publicznie dostępne na stronie UKE i nie zawierają danych osobowych.</li>
   </ul>
 
   <h2>3. Dane przechowywane lokalnie</h2>
@@ -163,7 +164,7 @@
     <li>Lista ulubionych przemienników</li>
     <li>Ostatnio używany znak wywoławczy lub nick</li>
     <li>Ustawienia filtrów i preferencje wyświetlania</li>
-    <li>Cache kafli mapy (dla działania offline)</li>
+    <li>Cache danych przemienników, klubów i operatorów (dla szybszego działania)</li>
   </ul>
   <div class="highlight">
     Dane lokalne są usuwane wraz z odinstalowaniem aplikacji i nie są przesyłane na żadne serwery.
@@ -173,8 +174,9 @@
   <p>Zbierane dane są wykorzystywane wyłącznie w celu:</p>
   <ul>
     <li>Wyświetlania przemienników krótkofalowych na mapie i liście</li>
+    <li>Wyświetlania bazy klubów i operatorów krótkofalowych</li>
     <li>Umożliwienia publikowania ogłoszeń aktywności na częstotliwości</li>
-    <li>Sortowania przemienników według odległości od użytkownika</li>
+    <li>Sortowania przemienników i klubów według odległości od użytkownika</li>
     <li>Poprawy jakości i funkcjonalności aplikacji</li>
   </ul>
 
@@ -183,14 +185,13 @@
   <ul>
     <li><strong>Google Firebase</strong> (Firestore, Authentication, Analytics) — <a href="https://firebase.google.com/support/privacy" target="_blank">polityka prywatności Google</a></li>
     <li><strong>Mapbox</strong> — dostawca kafelków mapowych — <a href="https://www.mapbox.com/legal/privacy" target="_blank">polityka prywatności Mapbox</a></li>
-    <li><strong>Nominatim / OpenStreetMap</strong> — geokodowanie lokalizacji — <a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank">polityka prywatności OSM</a></li>
   </ul>
 
   <h2>6. Uprawnienia aplikacji</h2>
   <p>Aplikacja wymaga następujących uprawnień systemowych:</p>
   <ul>
-    <li><strong>Lokalizacja (dokładna i przybliżona)</strong> — do wyświetlania pobliskich przemienników i dodawania lokalizacji do ogłoszeń</li>
-    <li><strong>Internet</strong> — do pobierania danych o przemiennikach, map i synchronizacji ogłoszeń</li>
+    <li><strong>Lokalizacja (dokładna i przybliżona)</strong> — do wyświetlania pobliskich przemienników i klubów oraz dodawania lokalizacji do ogłoszeń</li>
+    <li><strong>Internet</strong> — do pobierania danych o przemiennikach, klubach, operatorach, map i synchronizacji ogłoszeń</li>
   </ul>
 
   <h2>7. Przechowywanie i bezpieczeństwo</h2>
