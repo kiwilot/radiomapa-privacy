@@ -151,9 +151,8 @@
   <h2>2. Zbierane dane</h2>
   <p>Aplikacja może zbierać następujące dane:</p>
   <ul>
-    <li><strong>Dane lokalizacji</strong> — dokładna i przybliżona lokalizacja urządzenia, wykorzystywana do wyświetlania przemienników w pobliżu oraz do funkcji ogłoszeń aktywności (QRV). Lokalizacja jest pobierana wyłącznie na żądanie użytkownika.</li>
+    <li><strong>Dane lokalizacji</strong> — dokładna i przybliżona lokalizacja urządzenia, wykorzystywana do wyświetlania przemienników w pobliżu oraz sortowania według odległości. Lokalizacja jest pobierana wyłącznie na żądanie użytkownika.</li>
     <li><strong>Identyfikator anonimowy</strong> — aplikacja tworzy anonimowy identyfikator użytkownika za pomocą Firebase Authentication. Nie jest powiązany z żadnymi danymi osobowymi.</li>
-    <li><strong>Dane ogłoszeń</strong> — przy publikowaniu ogłoszenia aktywności zbierane są: znak wywoławczy lub nick, częstotliwość, lokalizacja oraz godziny aktywności. Dane te są przechowywane w Firebase Firestore i widoczne publicznie dla innych użytkowników aplikacji.</li>
     <li><strong>Dane analityczne</strong> — aplikacja korzysta z Firebase Analytics do zbierania anonimowych danych o użytkowaniu (np. liczba sesji, używane ekrany). Dane te nie identyfikują użytkownika.</li>
     <li><strong>Dane z rejestrów publicznych</strong> — aplikacja wyświetla dane z publicznego rejestru UKE (znaki wywoławcze klubów i operatorów, miejscowości, kategorie licencji). Dane te są publicznie dostępne na stronie UKE i nie zawierają danych osobowych.</li>
   </ul>
@@ -162,7 +161,6 @@
   <p>Na urządzeniu użytkownika lokalnie przechowywane są:</p>
   <ul>
     <li>Lista ulubionych przemienników</li>
-    <li>Ostatnio używany znak wywoławczy lub nick</li>
     <li>Ustawienia filtrów i preferencje wyświetlania</li>
     <li>Cache danych przemienników, klubów i operatorów (dla szybszego działania)</li>
   </ul>
@@ -175,7 +173,6 @@
   <ul>
     <li>Wyświetlania przemienników krótkofalowych na mapie i liście</li>
     <li>Wyświetlania bazy klubów i operatorów krótkofalowych</li>
-    <li>Umożliwienia publikowania ogłoszeń aktywności na częstotliwości</li>
     <li>Sortowania przemienników i klubów według odległości od użytkownika</li>
     <li>Poprawy jakości i funkcjonalności aplikacji</li>
   </ul>
@@ -184,7 +181,7 @@
   <p>Dane użytkownika nie są sprzedawane ani udostępniane podmiotom trzecim w celach komercyjnych. Aplikacja korzysta z następujących usług zewnętrznych:</p>
   <ul>
     <li><strong>Google Firebase</strong> (Firestore, Authentication, Analytics) — <a href="https://firebase.google.com/support/privacy" target="_blank">polityka prywatności Google</a></li>
-    <li><strong>Mapbox</strong> — dostawca kafelków mapowych — <a href="https://www.mapbox.com/legal/privacy" target="_blank">polityka prywatności Mapbox</a></li>
+    <li><strong>TomTom</strong> — dostawca kafelków mapowych — <a href="https://www.tomtom.com/privacy/" target="_blank">polityka prywatności TomTom</a></li>
     <li><strong>hamqsl.com</strong> — dostawca danych propagacyjnych (źródło: NASA/NOAA) — <a href="https://www.hamqsl.com" target="_blank">hamqsl.com</a></li>
     <li><strong>UKE</strong> (Urząd Komunikacji Elektronicznej) — publiczny rejestr klubów krótkofalarskich i licencjonowanych operatorów — <a href="https://www.uke.gov.pl" target="_blank">uke.gov.pl</a></li>
   </ul>
@@ -192,17 +189,16 @@
   <h2>6. Uprawnienia aplikacji</h2>
   <p>Aplikacja wymaga następujących uprawnień systemowych:</p>
   <ul>
-    <li><strong>Lokalizacja (dokładna i przybliżona)</strong> — do wyświetlania pobliskich przemienników i klubów oraz dodawania lokalizacji do ogłoszeń</li>
-    <li><strong>Internet</strong> — do pobierania danych o przemiennikach, klubach, operatorach, map i synchronizacji ogłoszeń</li>
+    <li><strong>Lokalizacja (dokładna i przybliżona)</strong> — do wyświetlania pobliskich przemienników i klubów</li>
+    <li><strong>Internet</strong> — do pobierania danych o przemiennikach, klubach, operatorach oraz map</li>
   </ul>
 
   <h2>7. Przechowywanie i bezpieczeństwo</h2>
-  <p>Dane ogłoszeń przechowywane są w Google Firebase Firestore, który zapewnia szyfrowanie danych w tranzycie (TLS) oraz w spoczynku. Anonimowe ogłoszenia są automatycznie usuwane po upływie czasu ich ważności.</p>
+  <p>Dane przechowywane są w Google Firebase Firestore, który zapewnia szyfrowanie danych w tranzycie (TLS) oraz w spoczynku.</p>
 
   <h2>8. Prawa użytkownika</h2>
   <p>Użytkownik ma prawo do:</p>
   <ul>
-    <li>Usunięcia swoich ogłoszeń bezpośrednio z aplikacji</li>
     <li>Wyłączenia dostępu do lokalizacji w ustawieniach systemowych urządzenia</li>
     <li>Usunięcia danych lokalnych poprzez odinstalowanie aplikacji</li>
   </ul>
