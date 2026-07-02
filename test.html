@@ -1,1 +1,248 @@
-<h1>test</h1>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regulamin — RadioMapa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #16a34a;
+      --dark: #1a1a1a;
+      --text: #374151;
+      --hint: #9ca3af;
+      --border: #e5e7eb;
+      --surface: #f9fafb;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--dark);
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    header .logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    header .logo span { color: var(--green); font-weight: 400; }
+
+    header p { margin-top: 8px; color: var(--hint); font-size: 0.9rem; }
+
+    nav.doc-switch {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    nav.doc-switch a {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--hint);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    nav.doc-switch a.active {
+      color: #fff;
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .updated {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      color: var(--hint);
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-top: 40px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--green);
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    p { margin-bottom: 12px; font-size: 0.95rem; }
+
+    ul, ol { margin: 8px 0 12px 20px; font-size: 0.95rem; }
+
+    ul li, ol li { margin-bottom: 6px; }
+
+    .section { margin-bottom: 8px; }
+
+    .highlight {
+      background: var(--surface);
+      border-left: 3px solid var(--green);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--hint);
+    }
+
+    footer strong { color: var(--dark); }
+
+    a { color: var(--green); text-decoration: none; }
+
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Radio<span>Mapa</span></div>
+  <p>Regulamin</p>
+  <nav class="doc-switch">
+    <a href="index.html">Polityka Prywatności</a>
+    <a href="regulamin.html" class="active">Regulamin</a>
+  </nav>
+</header>
+
+<main>
+  <div class="updated">Ostatnia aktualizacja: lipiec 2026</div>
+
+  <h2>1. Postanowienia ogólne</h2>
+  <p>Niniejszy Regulamin określa zasady korzystania z aplikacji mobilnej <strong>RadioMapa</strong> (dalej: „Aplikacja”), przeznaczonej dla społeczności krótkofalowców i radioamatorów, umożliwiającej m.in. przeglądanie bazy przemienników, klubów i operatorów, publikowanie ogłoszeń o aktywności (QRV) oraz komentowanie przemienników.</p>
+  <p>Usługodawcą i administratorem Aplikacji jest <strong>Łukasz Liszka</strong>, kontakt: <a href="mailto:dev.spontanik@gmail.com">dev.spontanik@gmail.com</a> (dalej: „Usługodawca”).</p>
+  <p>Korzystanie z funkcji Aplikacji wymagających logowania (dodawanie ogłoszeń, komentowanie, powiadomienia) jest równoznaczne z akceptacją niniejszego Regulaminu oraz <a href="index.html">Polityki Prywatności</a>.</p>
+
+  <h3>Definicje</h3>
+  <ul>
+    <li><strong>Aplikacja</strong> — aplikacja mobilna RadioMapa dostępna na urządzenia z Androidem/iOS.</li>
+    <li><strong>Użytkownik</strong> — osoba korzystająca z Aplikacji.</li>
+    <li><strong>Konto</strong> — profil Użytkownika utworzony poprzez logowanie Google, powiązany ze znakiem wywoławczym lub nickiem.</li>
+    <li><strong>Znak wywoławczy</strong> — indywidualny znak radioamatorski (callsign) lub nick zadeklarowany i zarezerwowany przez Użytkownika przy zakładaniu Konta.</li>
+    <li><strong>Ogłoszenie QRV</strong> — publikowana przez Użytkownika informacja o planowanej lub trwającej aktywności radiowej.</li>
+    <li><strong>Moderator</strong> — Użytkownik z uprawnieniami do zatwierdzania, odrzucania i usuwania treści oraz nakładania blokad.</li>
+  </ul>
+
+  <h2>2. Warunki korzystania z Aplikacji</h2>
+  <ol>
+    <li>Przeglądanie mapy, listy przemienników, bazy klubów, operatorów oraz zakładki QRV jest możliwe bez logowania.</li>
+    <li>Dodawanie ogłoszeń QRV, komentowanie przemienników oraz włączenie powiadomień push wymaga zalogowania się kontem Google oraz ustawienia znaku wywoławczego lub nicku.</li>
+    <li>Korzystanie z Aplikacji jest bezpłatne.</li>
+    <li>Do korzystania z Aplikacji niezbędne jest urządzenie mobilne z dostępem do internetu, spełniające minimalne wymagania systemowe Aplikacji.</li>
+  </ol>
+
+  <h2>3. Konto i znak wywoławczy</h2>
+  <ol>
+    <li>Zakładając Konto, Użytkownik samodzielnie deklaruje znak wywoławczy lub nick, którym będzie się posługiwał w Aplikacji.</li>
+    <li>Znak wywoławczy jest unikalny — nie mogą go jednocześnie rezerwować dwaj Użytkownicy — oraz nie podlega zmianie po zapisaniu.</li>
+    <li>Deklarując znak wywoławczy radioamatorski, Użytkownik oświadcza, że jest on jego prawnie przypisanym znakiem. Aplikacja może pomocniczo podpowiadać znaki na podstawie publicznego rejestru UKE, jednak nie weryfikuje formalnie posiadania ważnej licencji radioamatorskiej — odpowiedzialność za prawdziwość deklaracji spoczywa na Użytkowniku.</li>
+    <li>Zabronione jest podszywanie się pod cudzy znak wywoławczy lub tożsamość.</li>
+    <li>Użytkownik może w każdej chwili trwale usunąć swoje Konto w Aplikacji (Profil → Ustawienia → Usuń konto), po potwierdzeniu tożsamości poprzez ponowne zalogowanie i wpisanie swojego znaku wywoławczego. Szczegóły dotyczące zakresu i okresu przechowywania danych po usunięciu Konta opisuje <a href="index.html">Polityka Prywatności</a>.</li>
+  </ol>
+
+  <h2>4. Ogłoszenia QRV i komentarze</h2>
+  <ol>
+    <li>Ogłoszenie QRV może dotyczyć wyłącznie faktycznej lub planowanej aktywności radioamatorskiej Użytkownika i musi zawierać prawdziwe dane (tryb emisji, lokalizację, czas aktywności).</li>
+    <li>Ogłoszenie może być aktywne maksymalnie przez 7 kolejnych dni, w wybranych przez Użytkownika dniach tygodnia.</li>
+    <li>Komentarze pod przemiennikami powinny dotyczyć stanu technicznego, parametrów lub użytkowania danego przemiennika.</li>
+    <li>Nowo dodane ogłoszenia i komentarze mogą podlegać moderacji przed publicznym wyświetleniem.</li>
+    <li>Użytkownik może samodzielnie usunąć swoje ogłoszenie w dowolnym momencie.</li>
+  </ol>
+
+  <h2>5. Zasady zachowania i zakazane działania</h2>
+  <p>Zabrania się publikowania treści, które:</p>
+  <ul>
+    <li>są niezgodne z prawem, nawołują do nienawiści, przemocy lub dyskryminacji,</li>
+    <li>naruszają dobra osobiste, prywatność lub godność innych osób,</li>
+    <li>są wulgarne, obraźliwe lub stanowią spam bądź niedozwoloną reklamę,</li>
+    <li>zawierają nieprawdziwe dane techniczne mogące wprowadzić w błąd innych użytkowników pasma,</li>
+    <li>naruszają prawa autorskie lub inne prawa osób trzecich,</li>
+    <li>podszywają się pod inną osobę lub jej znak wywoławczy.</li>
+  </ul>
+  <p>Zabronione jest również podejmowanie działań mających na celu zakłócenie działania Aplikacji, w tym prób nieautoryzowanego dostępu do kont innych Użytkowników lub infrastruktury Aplikacji.</p>
+
+  <h2>6. Moderacja, zgłoszenia i sankcje</h2>
+  <ol>
+    <li>Każdy zalogowany Użytkownik może zgłosić ogłoszenie, komentarz lub profil naruszający niniejszy Regulamin.</li>
+    <li>Moderator może odrzucić lub usunąć treść naruszającą Regulamin, a w przypadku powtarzających się lub rażących naruszeń — nałożyć na Konto czasową lub stałą blokadę, wraz z podaniem powodu.</li>
+    <li>Historia zgłoszeń i blokad jest przechowywana wewnętrznie w celach audytowych, zgodnie z <a href="index.html">Polityką Prywatności</a>.</li>
+    <li>Użytkownik, którego Konto zostało zablokowane, może odwołać się od decyzji kontaktując się z Usługodawcą pod adresem <a href="mailto:dev.spontanik@gmail.com">dev.spontanik@gmail.com</a>.</li>
+  </ol>
+
+  <h2>7. Odpowiedzialność</h2>
+  <ol>
+    <li>Dane o przemiennikach, klubach i operatorach prezentowane w Aplikacji pochodzą częściowo z materiałów własnych, a częściowo z publicznego rejestru UKE oraz zgłoszeń Użytkowników i mogą zawierać nieścisłości lub być nieaktualne. Usługodawca dokłada starań, aby dane były rzetelne, ale nie gwarantuje ich pełnej poprawności ani aktualności.</li>
+    <li>Aplikacja pełni funkcję informacyjną i pomocniczą — Użytkownik korzysta z niej na własną odpowiedzialność i zobowiązany jest do przestrzegania obowiązujących przepisów prawa telekomunikacyjnego oraz posiadania odpowiednich uprawnień radioamatorskich przy faktycznym nadawaniu.</li>
+    <li>Usługodawca nie ponosi odpowiedzialności za treści publikowane przez Użytkowników (ogłoszenia, komentarze, opisy profili), za wyjątkiem sytuacji, w których uzyskał wiarygodną wiadomość o ich bezprawnym charakterze i nie podjął odpowiednich działań.</li>
+    <li>Usługodawca nie gwarantuje nieprzerwanego i wolnego od błędów działania Aplikacji oraz zastrzega sobie prawo do czasowych przerw technicznych.</li>
+  </ol>
+
+  <h2>8. Reklamacje</h2>
+  <p>Reklamacje dotyczące działania Aplikacji można zgłaszać na adres <a href="mailto:dev.spontanik@gmail.com">dev.spontanik@gmail.com</a>, podając opis problemu oraz dane pozwalające na identyfikację Konta (np. znak wywoławczy). Reklamacje rozpatrywane są w miarę możliwości w terminie 14 dni od zgłoszenia.</p>
+
+  <h2>9. Ochrona danych osobowych</h2>
+  <p>Zasady przetwarzania danych osobowych Użytkowników określa odrębny dokument — <a href="index.html">Polityka Prywatności</a>, stanowiąca integralne uzupełnienie niniejszego Regulaminu.</p>
+
+  <h2>10. Zmiany Regulaminu</h2>
+  <p>Usługodawca zastrzega sobie prawo do zmiany Regulaminu, w szczególności w związku z rozwojem funkcji Aplikacji lub zmianami przepisów prawa. O istotnych zmianach Użytkownicy zostaną poinformowani poprzez aktualizację Aplikacji lub stosowną informację w jej ustawieniach. Aktualna treść Regulaminu jest zawsze dostępna pod tym adresem oraz w Aplikacji (Profil → Ustawienia).</p>
+
+  <h2>11. Postanowienia końcowe</h2>
+  <ol>
+    <li>W sprawach nieuregulowanych niniejszym Regulaminem zastosowanie mają przepisy prawa polskiego, w tym Kodeksu cywilnego oraz ustawy o świadczeniu usług drogą elektroniczną.</li>
+    <li>Jeżeli którekolwiek z postanowień Regulaminu okaże się nieważne lub bezskuteczne, pozostałe postanowienia zachowują moc obowiązującą.</li>
+    <li>Regulamin wchodzi w życie z dniem publikacji pod niniejszym adresem.</li>
+  </ol>
+</main>
+
+<footer>
+  <strong>RadioMapa</strong> — Baza przemienników krótkofalowych<br>
+  &copy; 2026 RadioMapa. Wszelkie prawa zastrzeżone.
+</footer>
+
+</body>
+</html>
