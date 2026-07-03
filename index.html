@@ -10,8 +10,8 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green: #22c55e;
-      --dark: #111827;
+      --green: #16a34a;
+      --dark: #1a1a1a;
       --text: #374151;
       --hint: #9ca3af;
       --border: #e5e7eb;
@@ -40,15 +40,32 @@
       letter-spacing: -0.5px;
     }
 
-    header .logo span {
-      color: var(--green);
-      font-weight: 400;
+    header .logo span { color: var(--green); font-weight: 400; }
+
+    header p { margin-top: 8px; color: var(--hint); font-size: 0.9rem; }
+
+    nav.doc-switch {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
     }
 
-    header p {
-      margin-top: 8px;
+    nav.doc-switch a {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
       color: var(--hint);
-      font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    nav.doc-switch a.active {
+      color: #fff;
+      background: var(--green);
+      border-color: var(--green);
     }
 
     main {
@@ -58,7 +75,8 @@
     }
 
     .updated {
-      display: inline-block;
+      display: block;
+      width: fit-content;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 6px;
@@ -80,23 +98,21 @@
       display: inline-block;
     }
 
-    p {
-      margin-bottom: 12px;
+    h3 {
       font-size: 0.95rem;
-    }
-
-    ul {
-      margin: 8px 0 12px 20px;
-      font-size: 0.95rem;
-    }
-
-    ul li {
-      margin-bottom: 6px;
-    }
-
-    .section {
+      font-weight: 600;
+      color: var(--dark);
+      margin-top: 20px;
       margin-bottom: 8px;
     }
+
+    p { margin-bottom: 12px; font-size: 0.95rem; }
+
+    ul { margin: 8px 0 12px 20px; font-size: 0.95rem; }
+
+    ul li { margin-bottom: 6px; }
+
+    .section { margin-bottom: 8px; }
 
     .highlight {
       background: var(--surface);
@@ -108,6 +124,26 @@
       color: var(--text);
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 20px;
+      font-size: 0.88rem;
+    }
+
+    table th, table td {
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    table th {
+      color: var(--dark);
+      font-weight: 600;
+      background: var(--surface);
+    }
+
     footer {
       text-align: center;
       padding: 32px 24px;
@@ -117,18 +153,11 @@
       color: var(--hint);
     }
 
-    footer strong {
-      color: var(--dark);
-    }
+    footer strong { color: var(--dark); }
 
-    a {
-      color: var(--green);
-      text-decoration: none;
-    }
+    a { color: var(--green); text-decoration: none; }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -136,81 +165,141 @@
 <header>
   <div class="logo">Radio<span>Mapa</span></div>
   <p>Polityka Prywatności</p>
+  <nav class="doc-switch">
+    <a href="index.html" class="active">Polityka Prywatności</a>
+    <a href="regulamin.html">Regulamin</a>
+  </nav>
 </header>
 
 <main>
-  <div class="updated">Ostatnia aktualizacja: Maj 2026</div>
+  <div class="updated">Ostatnia aktualizacja: lipiec 2026</div>
 
   <div class="section">
-    <p>Niniejsza Polityka Prywatności opisuje, w jaki sposób aplikacja <strong>RadioMapa</strong> zbiera, wykorzystuje i przechowuje dane użytkowników. Korzystając z aplikacji, akceptujesz warunki opisane w tym dokumencie.</p>
+    <p>Niniejsza Polityka Prywatności opisuje, jakie dane zbiera i przetwarza aplikacja mobilna <strong>RadioMapa</strong> (dalej: „Aplikacja”), w jakim celu i na jakiej podstawie prawnej, komu są udostępniane oraz jakie prawa przysługują użytkownikom Aplikacji zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 (RODO).</p>
   </div>
 
   <h2>1. Administrator danych</h2>
-  <p>Administratorem danych jest twórca aplikacji RadioMapa. Aplikacja jest przeznaczona dla społeczności krótkofalowców i radioamatorów w Polsce oraz Europie.</p>
+  <p>Administratorem danych osobowych przetwarzanych w związku z korzystaniem z Aplikacji jest:</p>
+  <p><strong>Łukasz Liszka</strong><br>
+  kontakt e-mail: <a href="mailto:dev.spontanik@gmail.com">dev.spontanik@gmail.com</a></p>
+  <p>We wszystkich sprawach dotyczących przetwarzania danych osobowych, w tym w celu realizacji praw opisanych w punkcie 6, można kontaktować się pod powyższym adresem e-mail.</p>
 
-  <h2>2. Zbierane dane</h2>
-  <p>Aplikacja może zbierać następujące dane:</p>
+  <h2>2. Jakie dane zbieramy</h2>
+
+  <h3>2.1 Dane konta</h3>
+  <p>Logowanie odbywa się wyłącznie przez Google Sign-In. W ten sposób otrzymujemy i zapisujemy:</p>
   <ul>
-    <li><strong>Dane lokalizacji</strong> — dokładna i przybliżona lokalizacja urządzenia, wykorzystywana do wyświetlania przemienników w pobliżu oraz sortowania według odległości. Lokalizacja jest pobierana wyłącznie na żądanie użytkownika.</li>
-    <li><strong>Identyfikator anonimowy</strong> — aplikacja tworzy anonimowy identyfikator użytkownika za pomocą Firebase Authentication. Nie jest powiązany z żadnymi danymi osobowymi.</li>
-    <li><strong>Dane analityczne</strong> — aplikacja korzysta z Firebase Analytics do zbierania anonimowych danych o użytkowaniu (np. liczba sesji, używane ekrany). Dane te nie identyfikują użytkownika.</li>
-    <li><strong>Dane z rejestrów publicznych</strong> — aplikacja wyświetla dane z publicznego rejestru UKE (znaki wywoławcze klubów i operatorów, miejscowości, kategorie licencji). Dane te są publicznie dostępne na stronie UKE i nie zawierają danych osobowych.</li>
+    <li>adres e-mail powiązany z kontem Google,</li>
+    <li>znak wywoławczy lub nick, który użytkownik samodzielnie deklaruje i rezerwuje przy pierwszym logowaniu (nie można go później zmienić),</li>
+    <li>opcjonalny opis „O mnie” widoczny na profilu publicznym,</li>
+    <li>opcjonalne zdjęcie profilowe (avatar) — przechowywane poza infrastrukturą Google, na serwerach Cloudflare (patrz punkt 4),</li>
+    <li>datę utworzenia konta i datę ostatniej aktywności,</li>
+    <li>status konta (np. informacja o ewentualnej blokadzie).</li>
   </ul>
 
-  <h2>3. Dane przechowywane lokalnie</h2>
-  <p>Na urządzeniu użytkownika lokalnie przechowywane są:</p>
+  <h3>2.2 Lokalizacja</h3>
+  <p>Za zgodą użytkownika (uprawnienie systemowe) Aplikacja korzysta z lokalizacji GPS w trzech niezależnych celach:</p>
   <ul>
-    <li>Lista ulubionych przemienników</li>
-    <li>Ustawienia filtrów i preferencje wyświetlania</li>
-    <li>Cache danych przemienników, klubów i operatorów (dla szybszego działania)</li>
-  </ul>
-  <div class="highlight">
-    Dane lokalne są usuwane wraz z odinstalowaniem aplikacji i nie są przesyłane na żadne serwery.
-  </div>
-
-  <h2>4. Cel przetwarzania danych</h2>
-  <p>Zbierane dane są wykorzystywane wyłącznie w celu:</p>
-  <ul>
-    <li>Wyświetlania przemienników krótkofalowych na mapie i liście</li>
-    <li>Wyświetlania bazy klubów i operatorów krótkofalowych</li>
-    <li>Sortowania przemienników i klubów według odległości od użytkownika</li>
-    <li>Poprawy jakości i funkcjonalności aplikacji</li>
+    <li><strong>Mapa</strong> — bieżąca pozycja jest używana wyłącznie lokalnie do centrowania mapy i liczenia odległości do przemienników, klubów i ogłoszeń. Nie jest przy tym zapisywana na serwerze.</li>
+    <li><strong>Tworzenie ogłoszenia QRV</strong> — jednorazowy odczyt pozycji służy do automatycznego uzupełnienia lokalizacji ogłoszenia. Współrzędne są w tym celu wysyłane do zewnętrznej usługi OpenStreetMap Nominatim (patrz punkt 4), a wynikowa nazwa miejsca oraz współrzędne zostają zapisane jako część publicznie widocznego ogłoszenia.</li>
+    <li><strong>Powiadomienia push z promieniem</strong> — jeśli użytkownik włączy powiadomienia i wybierze konkretny promień (np. 100 km zamiast „bez limitu”), pozycja z momentu zapisu ustawień jest zapisywana trwale na koncie użytkownika i wykorzystywana do obliczania, czy nowe ogłoszenie mieści się w wybranym promieniu.</li>
   </ul>
 
-  <h2>5. Udostępnianie danych</h2>
-  <p>Dane użytkownika nie są sprzedawane ani udostępniane podmiotom trzecim w celach komercyjnych. Aplikacja korzysta z następujących usług zewnętrznych:</p>
+  <h3>2.3 Treści publikowane przez użytkownika</h3>
+  <p>W ramach korzystania z Aplikacji użytkownik może publicznie udostępniać:</p>
   <ul>
-    <li><strong>Google Firebase</strong> (Firestore, Authentication, Analytics) — <a href="https://firebase.google.com/support/privacy" target="_blank">polityka prywatności Google</a></li>
-    <li><strong>TomTom</strong> — dostawca kafelków mapowych — <a href="https://www.tomtom.com/privacy/" target="_blank">polityka prywatności TomTom</a></li>
-    <li><strong>hamqsl.com</strong> — dostawca danych propagacyjnych (źródło: NASA/NOAA) — <a href="https://www.hamqsl.com" target="_blank">hamqsl.com</a></li>
-    <li><strong>UKE</strong> (Urząd Komunikacji Elektronicznej) — publiczny rejestr klubów krótkofalarskich i licencjonowanych operatorów — <a href="https://www.uke.gov.pl" target="_blank">uke.gov.pl</a></li>
+    <li><strong>Ogłoszenia QRV</strong> — znak wywoławczy, tryb emisji i parametry techniczne, lokalizację (nazwa i współrzędne), opis tekstowy, godziny i dni aktywności,</li>
+    <li><strong>Komentarze pod przemiennikami</strong> — znak wywoławczy i treść komentarza (widoczne po zatwierdzeniu przez moderatora).</li>
+  </ul>
+  <p>Treści te są, po ewentualnej moderacji, widoczne publicznie dla wszystkich użytkowników Aplikacji.</p>
+
+  <h3>2.4 Powiadomienia</h3>
+  <p>Jeśli użytkownik włączy powiadomienia push, zapisujemy techniczny token urządzenia (FCM) oraz wybrane przez niego filtry (tryby emisji, promień), aby dostarczać powiadomienia o nowych ogłoszeniach zgodnych z tymi filtrami.</p>
+
+  <h3>2.5 Dane związane z moderacją</h3>
+  <p>Aby utrzymać porządek i bezpieczeństwo społeczności, przechowujemy:</p>
+  <ul>
+    <li>zgłoszenia ogłoszeń i profili (identyfikator zgłaszającego, powód, data),</li>
+    <li>historię blokad (kto, kogo, kiedy, na jak długo i z jakiego powodu zablokował),</li>
+    <li>ogólny log działań moderacyjnych.</li>
+  </ul>
+  <p>Dane te nie są widoczne publicznie — mają dostęp do nich wyłącznie moderatorzy Aplikacji.</p>
+
+  <h3>2.6 Dane analityczne</h3>
+  <p>Korzystamy z Firebase Analytics (Google Analytics for Firebase) do zbierania statystyk użytkowania Aplikacji (np. odwiedzane ekrany, liczba sesji). Część zdarzeń analitycznych (np. otwarcie szczegółów przemiennika, dodanie do ulubionych) zawiera znak wywoławczy powiązany z daną akcją.</p>
+
+  <h3>2.7 Dane przechowywane wyłącznie lokalnie</h3>
+  <p>Na urządzeniu użytkownika, bez przesyłania na nasze serwery, przechowywane są: lista ulubionych przemienników, ustawienia filtrów oraz lokalny cache bazy przemienników/klubów/operatorów (dla szybszego działania offline). Dane te są usuwane wraz z odinstalowaniem Aplikacji.</p>
+
+  <h3>2.8 Dane z rejestrów publicznych</h3>
+  <p>Baza przemienników, klubów i operatorów wyświetlana w Aplikacji pochodzi w części z publicznego rejestru Urzędu Komunikacji Elektronicznej (UKE) oraz materiałów własnych. Dane te są publicznie dostępne niezależnie od Aplikacji i nie są danymi pozyskiwanymi od użytkownika.</p>
+
+  <h2>3. Cele i podstawy prawne przetwarzania</h2>
+  <table>
+    <tr><th>Cel</th><th>Podstawa prawna</th></tr>
+    <tr><td>Założenie i obsługa konta, umożliwienie logowania</td><td>art. 6 ust. 1 lit. b RODO (wykonanie umowy — Regulamin)</td></tr>
+    <tr><td>Publikacja ogłoszeń QRV i komentarzy</td><td>art. 6 ust. 1 lit. b RODO</td></tr>
+    <tr><td>Wyświetlanie mapy i liczenie odległości</td><td>art. 6 ust. 1 lit. a RODO (zgoda na dostęp do lokalizacji)</td></tr>
+    <tr><td>Powiadomienia push</td><td>art. 6 ust. 1 lit. a RODO (zgoda — powiadomienia są opcjonalne)</td></tr>
+    <tr><td>Moderacja, zgłoszenia, blokady, przeciwdziałanie nadużyciom</td><td>art. 6 ust. 1 lit. f RODO (uzasadniony interes administratora w utrzymaniu bezpieczeństwa i porządku w Aplikacji)</td></tr>
+    <tr><td>Statystyki i poprawa działania Aplikacji</td><td>art. 6 ust. 1 lit. f RODO (uzasadniony interes w rozwoju Aplikacji)</td></tr>
+  </table>
+
+  <h2>4. Komu udostępniamy dane</h2>
+  <p>Nie sprzedajemy danych użytkowników. Do działania Aplikacji korzystamy z poniższych podmiotów przetwarzających / dostawców usług:</p>
+  <ul>
+    <li><strong>Google Firebase / Google Cloud Platform</strong> (Authentication, Firestore, Cloud Messaging, Analytics, Remote Config, Storage danych bazowych) — <a href="https://firebase.google.com/support/privacy" target="_blank">polityka prywatności Google</a>. Dane mogą być przetwarzane na serwerach zlokalizowanych poza Europejskim Obszarem Gospodarczym, na podstawie standardowych klauzul umownych stosowanych przez Google.</li>
+    <li><strong>Cloudflare</strong> (Workers + R2) — przechowywanie zdjęć profilowych (avatarów) oraz pośredniczenie w dostarczaniu stylu mapy — <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">polityka prywatności Cloudflare</a>. Zdjęcia profilowe są dostępne pod publicznym adresem URL.</li>
+    <li><strong>TomTom</strong> — dostawca kafelków mapowych, dostarczanych za pośrednictwem naszego serwera pośredniczącego (klucz dostępowy nie jest ujawniany Aplikacji) — <a href="https://www.tomtom.com/privacy/" target="_blank">polityka prywatności TomTom</a>.</li>
+    <li><strong>OpenStreetMap Nominatim</strong> — usługa geokodowania odwrotnego używana przy tworzeniu ogłoszenia QRV; otrzymuje współrzędne GPS podane w tym momencie przez użytkownika.</li>
+    <li><strong>hamqsl.com</strong> (dane pochodzą z NASA/NOAA) — dostawca publicznych danych propagacyjnych; Aplikacja jedynie pobiera od nich dane, nie przesyła żadnych danych użytkownika.</li>
+    <li><strong>Urząd Komunikacji Elektronicznej (UKE)</strong> — źródło publicznych danych rejestrowych o klubach i operatorach; nie jest odbiorcą danych użytkowników Aplikacji.</li>
+  </ul>
+  <p>Dane mogą zostać ujawnione właściwym organom publicznym, jeżeli obowiązek taki wynika z przepisów prawa.</p>
+
+  <h2>5. Okres przechowywania danych</h2>
+  <ul>
+    <li>Dane konta (e-mail, znak, avatar, ustawienia) przechowujemy do momentu usunięcia konta przez użytkownika.</li>
+    <li>Ogłoszenia QRV są aktywne maksymalnie przez 7 dni, jednak zapis w bazie pozostaje do momentu ręcznego usunięcia ogłoszenia przez użytkownika lub usunięcia jego konta.</li>
+    <li>Komentarze pozostają widoczne do czasu ich usunięcia przez autora, moderatora lub usunięcia konta autora.</li>
+    <li>Dane moderacyjne (zgłoszenia, historia blokad, log moderacji) przechowujemy również po usunięciu konta użytkownika, którego dotyczą — ze względu na uzasadniony interes administratora w zachowaniu integralności historii moderacji i przeciwdziałaniu ponownym nadużyciom.</li>
+    <li>Dane analityczne przechowywane są zgodnie z domyślnymi okresami retencji Firebase Analytics/Google Analytics.</li>
   </ul>
 
-  <h2>6. Uprawnienia aplikacji</h2>
-  <p>Aplikacja wymaga następujących uprawnień systemowych:</p>
+  <h2>6. Prawa użytkownika</h2>
+  <p>Zgodnie z RODO przysługuje Ci prawo do:</p>
   <ul>
-    <li><strong>Lokalizacja (dokładna i przybliżona)</strong> — do wyświetlania pobliskich przemienników i klubów</li>
-    <li><strong>Internet</strong> — do pobierania danych o przemiennikach, klubach, operatorach oraz map</li>
+    <li>dostępu do swoich danych oraz uzyskania ich kopii,</li>
+    <li>sprostowania (poprawienia) nieprawidłowych danych,</li>
+    <li>usunięcia danych („prawo do bycia zapomnianym”) — w praktyce realizowane samodzielnie poprzez funkcję <em>Usuń konto</em> w Aplikacji (Profil → Ustawienia), z zastrzeżeniem punktu 5 dotyczącego danych moderacyjnych,</li>
+    <li>ograniczenia przetwarzania,</li>
+    <li>przenoszenia danych,</li>
+    <li>wniesienia sprzeciwu wobec przetwarzania opartego na uzasadnionym interesie administratora,</li>
+    <li>cofnięcia zgody w dowolnym momencie (np. wyłączenie lokalizacji lub powiadomień w ustawieniach), bez wpływu na zgodność z prawem przetwarzania dokonanego przed cofnięciem zgody,</li>
+    <li>wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (PUODO), jeśli uznasz, że przetwarzanie narusza przepisy RODO.</li>
   </ul>
+  <p>Aby skorzystać z powyższych praw, skontaktuj się z nami pod adresem <a href="mailto:dev.spontanik@gmail.com">dev.spontanik@gmail.com</a>.</p>
 
-  <h2>7. Przechowywanie i bezpieczeństwo</h2>
-  <p>Dane przechowywane są w Google Firebase Firestore, który zapewnia szyfrowanie danych w tranzycie (TLS) oraz w spoczynku.</p>
-
-  <h2>8. Prawa użytkownika</h2>
-  <p>Użytkownik ma prawo do:</p>
+  <h2>7. Uprawnienia systemowe Aplikacji</h2>
   <ul>
-    <li>Wyłączenia dostępu do lokalizacji w ustawieniach systemowych urządzenia</li>
-    <li>Usunięcia danych lokalnych poprzez odinstalowanie aplikacji</li>
+    <li><strong>Lokalizacja (dokładna i przybliżona)</strong> — mapa, tworzenie ogłoszeń, powiadomienia z promieniem,</li>
+    <li><strong>Galeria / aparat</strong> — wyłącznie przy dobrowolnym wyborze zdjęcia profilowego,</li>
+    <li><strong>Powiadomienia</strong> — wyłącznie po dobrowolnym włączeniu powiadomień QRV,</li>
+    <li><strong>Internet</strong> — do pobierania i wysyłania danych opisanych w niniejszej Polityce.</li>
   </ul>
+  <p>Każde z powyższych uprawnień można w dowolnym momencie cofnąć w ustawieniach systemowych urządzenia — może to ograniczyć działanie odpowiednich funkcji Aplikacji.</p>
 
-  <h2>9. Dzieci</h2>
-  <p>Aplikacja nie jest przeznaczona dla dzieci poniżej 13 roku życia i świadomie nie zbiera danych od osób w tym wieku.</p>
+  <h2>8. Bezpieczeństwo danych</h2>
+  <p>Dane przechowywane w Google Firebase / Firestore są szyfrowane w tranzycie (TLS) oraz w spoczynku. Dostęp do danych moderacyjnych i panelu administracyjnego jest ograniczony wyłącznie do wyznaczonych moderatorów.</p>
 
-  <h2>10. Zmiany polityki prywatności</h2>
-  <p>Zastrzegamy sobie prawo do aktualizacji niniejszej polityki prywatności. O wszelkich istotnych zmianach użytkownicy zostaną poinformowani poprzez aktualizację aplikacji lub stosowne powiadomienie.</p>
+  <h2>9. Dzieci i młodzież</h2>
+  <p>Aplikacja nie jest kierowana do osób poniżej 16 roku życia i nie zbiera świadomie danych takich osób. Jeśli jesteś rodzicem lub opiekunem i uważasz, że osoba niepełnoletnia poniżej tego wieku przekazała nam swoje dane, skontaktuj się z nami w celu ich usunięcia.</p>
+
+  <h2>10. Zmiany Polityki Prywatności</h2>
+  <p>Zastrzegamy sobie prawo do aktualizacji niniejszej Polityki Prywatności, w szczególności w związku z rozwojem funkcji Aplikacji. O istotnych zmianach poinformujemy poprzez aktualizację Aplikacji lub odpowiednią informację w jej ustawieniach. Aktualna wersja jest zawsze dostępna pod tym adresem oraz w Aplikacji (Profil → Ustawienia).</p>
 
   <h2>11. Kontakt</h2>
-  <p>W przypadku pytań dotyczących polityki prywatności prosimy o kontakt poprzez stronę aplikacji w Google Play.</p>
+  <p>W sprawach dotyczących niniejszej Polityki Prywatności oraz przetwarzania danych osobowych prosimy o kontakt: <a href="mailto:dev.spontanik@gmail.com">dev.spontanik@gmail.com</a>.</p>
 </main>
 
 <footer>
