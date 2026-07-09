@@ -193,9 +193,14 @@
     <li>znak wywoławczy lub nick, który użytkownik samodzielnie deklaruje i rezerwuje przy pierwszym logowaniu (nie można go później zmienić),</li>
     <li>opcjonalny opis „O mnie” widoczny na profilu publicznym,</li>
     <li>opcjonalne zdjęcie profilowe (avatar) — przechowywane poza infrastrukturą Google, na serwerach Cloudflare (patrz punkt 4),</li>
+    <li>opcjonalne zdjęcia w galerii profilu (do 20 zdjęć), każde z opcjonalnym krótkim podpisem — przechowywane tak jak avatar na serwerach Cloudflare (patrz punkt 4); każde zdjęcie wymaga zatwierdzenia przez moderatora, zanim stanie się widoczne publicznie (patrz punkt 2.5),</li>
+    <li>opcjonalną listę znajomych — znaki wywoławcze innych użytkowników, dodane samodzielnie przez właściciela konta bez konieczności potwierdzenia przez drugą stronę; lista może być dodatkowo ustawiona jako widoczna publicznie (patrz niżej),</li>
     <li>datę utworzenia konta i datę ostatniej aktywności,</li>
     <li>status konta (np. informacja o ewentualnej blokadzie).</li>
   </ul>
+  <div class="highlight">
+    <p style="margin-bottom:0"><strong>Profil publiczny.</strong> Opis „O mnie”, zdjęcie profilowe, zdjęcia w galerii, lista znajomych oraz aktywne ogłoszenia QRV są widoczne dla innych użytkowników na publicznym profilu operatora wyłącznie wtedy, gdy użytkownik włączy opcję „Profil publiczny” w Ustawieniach. Lista znajomych wymaga dodatkowo osobno włączonej opcji „Publiczna lista znajomych” — samo włączenie profilu publicznego jej nie ujawnia. Wyłączenie „Profilu publicznego” ukrywa te dane z widoku publicznego (bez ich usuwania) i można je w każdej chwili włączyć ponownie.</p>
+  </div>
 
   <h3>2.2 Lokalizacja</h3>
   <p>Za zgodą użytkownika (uprawnienie systemowe) Aplikacja korzysta z lokalizacji GPS w trzech niezależnych celach:</p>
@@ -209,7 +214,9 @@
   <p>W ramach korzystania z Aplikacji użytkownik może publicznie udostępniać:</p>
   <ul>
     <li><strong>Ogłoszenia QRV</strong> — znak wywoławczy, tryb emisji i parametry techniczne, lokalizację (nazwa i współrzędne), opis tekstowy, godziny i dni aktywności,</li>
-    <li><strong>Komentarze pod przemiennikami</strong> — znak wywoławczy i treść komentarza (widoczne po zatwierdzeniu przez moderatora).</li>
+    <li><strong>Komentarze pod przemiennikami</strong> — znak wywoławczy i treść komentarza (widoczne po zatwierdzeniu przez moderatora),</li>
+    <li><strong>Zdjęcia w galerii profilu</strong> — wraz z opcjonalnym podpisem (widoczne po zatwierdzeniu przez moderatora, patrz punkt 2.1 i 2.5),</li>
+    <li><strong>Listę znajomych</strong> — jeśli użytkownik włączy jej publiczną widoczność (patrz punkt 2.1).</li>
   </ul>
   <p>Treści te są, po ewentualnej moderacji, widoczne publicznie dla wszystkich użytkowników Aplikacji.</p>
 
@@ -220,6 +227,7 @@
   <p>Aby utrzymać porządek i bezpieczeństwo społeczności, przechowujemy:</p>
   <ul>
     <li>zgłoszenia ogłoszeń i profili (identyfikator zgłaszającego, powód, data),</li>
+    <li>status moderacji zdjęć w galerii (oczekuje / zatwierdzone / odrzucone), w tym opcjonalny powód odrzucenia — każde zdjęcie jest sprawdzane przez moderatora przed publicznym pokazaniem, na tej samej zasadzie co ogłoszenia i komentarze,</li>
     <li>historię blokad (kto, kogo, kiedy, na jak długo i z jakiego powodu zablokował),</li>
     <li>ogólny log działań moderacyjnych.</li>
   </ul>
@@ -238,7 +246,7 @@
   <table>
     <tr><th>Cel</th><th>Podstawa prawna</th></tr>
     <tr><td>Założenie i obsługa konta, umożliwienie logowania</td><td>art. 6 ust. 1 lit. b RODO (wykonanie umowy — Regulamin)</td></tr>
-    <tr><td>Publikacja ogłoszeń QRV i komentarzy</td><td>art. 6 ust. 1 lit. b RODO</td></tr>
+    <tr><td>Publikacja ogłoszeń QRV, komentarzy, zdjęć w galerii i listy znajomych</td><td>art. 6 ust. 1 lit. b RODO (wykonanie umowy) oraz art. 6 ust. 1 lit. a RODO (dobrowolna decyzja o publikacji/udostępnieniu)</td></tr>
     <tr><td>Wyświetlanie mapy i liczenie odległości</td><td>art. 6 ust. 1 lit. a RODO (zgoda na dostęp do lokalizacji)</td></tr>
     <tr><td>Powiadomienia push</td><td>art. 6 ust. 1 lit. a RODO (zgoda — powiadomienia są opcjonalne)</td></tr>
     <tr><td>Moderacja, zgłoszenia, blokady, przeciwdziałanie nadużyciom</td><td>art. 6 ust. 1 lit. f RODO (uzasadniony interes administratora w utrzymaniu bezpieczeństwa i porządku w Aplikacji)</td></tr>
@@ -249,7 +257,7 @@
   <p>Nie sprzedajemy danych użytkowników. Do działania Aplikacji korzystamy z poniższych podmiotów przetwarzających / dostawców usług:</p>
   <ul>
     <li><strong>Google Firebase / Google Cloud Platform</strong> (Authentication, Firestore, Cloud Messaging, Analytics, Remote Config, Storage danych bazowych) — <a href="https://firebase.google.com/support/privacy" target="_blank">polityka prywatności Google</a>. Dane mogą być przetwarzane na serwerach zlokalizowanych poza Europejskim Obszarem Gospodarczym, na podstawie standardowych klauzul umownych stosowanych przez Google.</li>
-    <li><strong>Cloudflare</strong> (Workers + R2) — przechowywanie zdjęć profilowych (avatarów) oraz pośredniczenie w dostarczaniu stylu mapy — <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">polityka prywatności Cloudflare</a>. Zdjęcia profilowe są dostępne pod publicznym adresem URL.</li>
+    <li><strong>Cloudflare</strong> (Workers + R2) — przechowywanie zdjęć profilowych (avatarów) oraz zdjęć w galerii profilu, a także pośredniczenie w dostarczaniu stylu mapy — <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">polityka prywatności Cloudflare</a>. Zdjęcia profilowe i zatwierdzone zdjęcia z galerii są dostępne pod publicznym adresem URL.</li>
     <li><strong>TomTom</strong> — dostawca kafelków mapowych, dostarczanych za pośrednictwem naszego serwera pośredniczącego (klucz dostępowy nie jest ujawniany Aplikacji) — <a href="https://www.tomtom.com/privacy/" target="_blank">polityka prywatności TomTom</a>.</li>
     <li><strong>OpenStreetMap Nominatim</strong> — usługa geokodowania odwrotnego używana przy tworzeniu ogłoszenia QRV; otrzymuje współrzędne GPS podane w tym momencie przez użytkownika.</li>
     <li><strong>hamqsl.com</strong> (dane pochodzą z NASA/NOAA) — dostawca publicznych danych propagacyjnych; Aplikacja jedynie pobiera od nich dane, nie przesyła żadnych danych użytkownika.</li>
@@ -262,6 +270,8 @@
     <li>Dane konta (e-mail, znak, avatar, ustawienia) przechowujemy do momentu usunięcia konta przez użytkownika.</li>
     <li>Ogłoszenia QRV są aktywne maksymalnie przez 7 dni, jednak zapis w bazie pozostaje do momentu ręcznego usunięcia ogłoszenia przez użytkownika lub usunięcia jego konta.</li>
     <li>Komentarze pozostają widoczne do czasu ich usunięcia przez autora, moderatora lub usunięcia konta autora.</li>
+    <li>Zdjęcia w galerii profilu są przechowywane do czasu ich ręcznego usunięcia przez użytkownika lub usunięcia konta. Zdjęcie odrzucone przez moderatora pozostaje widoczne wyłącznie dla właściciela konta (wraz z powodem odrzucenia), dopóki nie zostanie przez niego usunięte.</li>
+    <li>Lista znajomych jest przechowywana do czasu ręcznego usunięcia poszczególnych pozycji przez użytkownika lub usunięcia jego konta.</li>
     <li>Dane moderacyjne (zgłoszenia, historia blokad, log moderacji) przechowujemy również po usunięciu konta użytkownika, którego dotyczą — ze względu na uzasadniony interes administratora w zachowaniu integralności historii moderacji i przeciwdziałaniu ponownym nadużyciom.</li>
     <li>Dane analityczne przechowywane są zgodnie z domyślnymi okresami retencji Firebase Analytics/Google Analytics.</li>
   </ul>
@@ -283,7 +293,7 @@
   <div class="highlight">
     <h3 style="margin-top:0">Jak usunąć konto bez dostępu do Aplikacji</h3>
     <p>Jeśli nie masz dostępu do Aplikacji (np. odinstalowałeś ją lub zmieniłeś urządzenie), możesz zażądać usunięcia konta i powiązanych danych, wysyłając e-mail na adres <a href="mailto:dev.spontanik@gmail.com?subject=Usuni%C4%99cie%20konta%20RadioMapa">dev.spontanik@gmail.com</a> z tematem „Usunięcie konta RadioMapa” oraz podając swój znak wywoławczy lub nick i adres e-mail powiązany z kontem Google. Konto zostanie usunięte w ciągu 14 dni od otrzymania żądania.</p>
-    <p>W ramach tego procesu usuwane są: adres e-mail, znak wywoławczy/nick, opis „O mnie”, zdjęcie profilowe oraz konto logowania Google. Zgodnie z punktem 5 zachowane pozostają: historyczne ogłoszenia QRV i komentarze (bez powiązania z usuniętym kontem) oraz dane moderacyjne dotyczące tego konta (zgłoszenia, historia blokad).</p>
+    <p>W ramach tego procesu usuwane są: adres e-mail, znak wywoławczy/nick, opis „O mnie”, zdjęcie profilowe, wszystkie zdjęcia w galerii, lista znajomych oraz konto logowania Google. Zgodnie z punktem 5 zachowane pozostają: historyczne ogłoszenia QRV i komentarze (bez powiązania z usuniętym kontem) oraz dane moderacyjne dotyczące tego konta (zgłoszenia, historia blokad).</p>
   </div>
 
   <div class="highlight">
@@ -291,6 +301,11 @@
     <p>Bez konieczności usuwania całego konta możesz samodzielnie, bezpośrednio w Aplikacji <strong>RadioMapa</strong>:</p>
     <ul>
       <li>usunąć swoje zdjęcie profilowe (Profil → „Usuń zdjęcie”) — usuwane natychmiast,</li>
+      <li>usunąć dowolne zdjęcie z galerii profilu (Profil → Galeria) — usuwane natychmiast, wraz z podpisem,</li>
+      <li>edytować lub usunąć podpis pod zdjęciem w galerii — bez usuwania samego zdjęcia,</li>
+      <li>usunąć dowolną osobę z listy znajomych (Profil → Znajomi) — usuwane natychmiast,</li>
+      <li>wyłączyć publiczną widoczność listy znajomych (Ustawienia → „Publiczna lista znajomych”) — sama lista pozostaje na koncie, przestaje być widoczna publicznie,</li>
+      <li>wyłączyć widoczność całego profilu publicznego (Ustawienia → „Profil publiczny”) — ukrywa opis, zdjęcie profilowe, galerię, znajomych i aktywne ogłoszenia z widoku publicznego, bez ich usuwania,</li>
       <li>usunąć dowolne własne ogłoszenie QRV (przycisk usuwania przy ogłoszeniu) — usuwane natychmiast,</li>
       <li>usunąć lub zmienić opis „O mnie” na swoim profilu — usuwane natychmiast.</li>
     </ul>
@@ -300,7 +315,7 @@
   <h2>7. Uprawnienia systemowe Aplikacji</h2>
   <ul>
     <li><strong>Lokalizacja (dokładna i przybliżona)</strong> — mapa, tworzenie ogłoszeń, powiadomienia z promieniem,</li>
-    <li><strong>Galeria / aparat</strong> — wyłącznie przy dobrowolnym wyborze zdjęcia profilowego,</li>
+    <li><strong>Galeria / aparat</strong> — wyłącznie przy dobrowolnym wyborze zdjęcia profilowego lub zdjęcia do galerii profilu,</li>
     <li><strong>Powiadomienia</strong> — wyłącznie po dobrowolnym włączeniu powiadomień QRV,</li>
     <li><strong>Internet</strong> — do pobierania i wysyłania danych opisanych w niniejszej Polityce.</li>
   </ul>
