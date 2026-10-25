@@ -217,6 +217,7 @@
     <li><strong>Komentarze pod przemiennikami</strong> — znak wywoławczy i treść komentarza (widoczne po zatwierdzeniu przez moderatora),</li>
     <li><strong>Zdjęcia w galerii profilu</strong> — wraz z opcjonalnym podpisem (widoczne po zatwierdzeniu przez moderatora, patrz punkt 2.1 i 2.5),</li>
     <li><strong>Listę znajomych</strong> — jeśli użytkownik włączy jej publiczną widoczność (patrz punkt 2.1).</li>
+    <li><strong>Głosy „Działa / Nie działa”</strong> — informację, czy przemiennik działa, i opcjonalny powód z listy. Głos jest zapisywany z identyfikatorem konta (także anonimowego), żeby każda osoba liczyła się raz; publicznie widoczne jest wyłącznie podsumowanie (np. „Potwierdzony 3 dni temu”), bez informacji, kto głosował.</li>
   </ul>
   <p>Treści te są, po ewentualnej moderacji, widoczne publicznie dla wszystkich użytkowników Aplikacji.</p>
 
@@ -273,7 +274,8 @@
     <li>Zdjęcia w galerii profilu są przechowywane do czasu ich ręcznego usunięcia przez użytkownika lub usunięcia konta. Zdjęcie odrzucone przez moderatora pozostaje widoczne wyłącznie dla właściciela konta (wraz z powodem odrzucenia), dopóki nie zostanie przez niego usunięte.</li>
     <li>Lista znajomych jest przechowywana do czasu ręcznego usunięcia poszczególnych pozycji przez użytkownika lub usunięcia jego konta.</li>
     <li>Dane moderacyjne (zgłoszenia, historia blokad, log moderacji) przechowujemy również po usunięciu konta użytkownika, którego dotyczą — ze względu na uzasadniony interes administratora w zachowaniu integralności historii moderacji i przeciwdziałaniu ponownym nadużyciom.</li>
-    <li>Dane analityczne przechowywane są zgodnie z domyślnymi okresami retencji Firebase Analytics/Google Analytics.</li>
+    <li>Głosy „Działa / Nie działa” przechowujemy do czasu ich cofnięcia lub zmiany przez użytkownika albo usunięcia konta.</li>
+    <li>Dane analityczne przechowywane są przez 14 miesięcy, po czym są automatycznie usuwane przez Google Analytics.</li>
   </ul>
 
   <h2>6. Prawa użytkownika</h2>
